@@ -22,3 +22,8 @@
   right: 20px;
   bottom: 30px;
 }
+
+.item img {
+  aspect-ratio: 2/2.2;
+  object-fit: cover;
+}
