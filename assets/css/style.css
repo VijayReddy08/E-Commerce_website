@@ -36,3 +36,8 @@
 .bg_checkout_1 {
   background-image: linear-gradient(-62deg, #8ec5fc 0%, #e710e7 100%);
 }
+
+.about img {
+  aspect-ratio: 3/2.2;
+  object-fit: fill;
+}
