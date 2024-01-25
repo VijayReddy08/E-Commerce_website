@@ -41,3 +41,19 @@
   aspect-ratio: 3/2.2;
   object-fit: fill;
 }
+
+.error {
+  color: red;
+}
+
+@media only screen and (min-width: 768px) {
+  .border-right-sm-0 {
+    border-right: 1px solid;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .b1 {
+    display: none;
+  }
+}
