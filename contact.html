@@ -122,7 +122,7 @@
                   <h3>Let's Talk</h3>
                   <p>
                     <strong>Phone:</strong
-                    ><a href="tel:+91-9876543210"> +91-9876543210</a>
+                    ><a href="tel:+91-9999999999"> +91-99999-99999</a>
                   </p>
                 </div>
               </div>
@@ -161,7 +161,13 @@
               class="col-md-8 col-10 mx-auto mb-3 my-5 py-5 border rounded shadow"
             >
               <h3 class="text-center mb-3">Contact Form</h3>
-              <form action="contact.html" method="POST" id="form">
+              <form
+                action="contact.html"
+                method="get"
+                id="form"
+                class="needs-validation"
+                novalidate
+              >
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input
@@ -169,23 +175,29 @@
                     id="name"
                     type="text"
                     placeholder="Name"
+                    pattern="[A-z\s]+"
                     class="form-control"
                     required
                   />
+                  <div class="invalid-feedback">Please enter your name.</div>
                 </div>
                 <div class="form-group">
-                  <label for="email">Email address</label>
+                  <label for="email">Email</label>
                   <input
                     name="email"
                     id="email"
                     type="email"
                     placeholder="Email"
+                    pattern="[A-z0-9.]+@[A-z]+\.[A-z]{3,}"
                     class="form-control"
                     required
                   />
+                  <div class="invalid-feedback">
+                    Please enter a valid email.
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="phone">Phone:</label>
+                  <label for="phone">Mobile Number</label>
                   <input
                     type="tel"
                     name="phone"
@@ -195,16 +207,22 @@
                     class="form-control"
                     required
                   />
+                  <div class="invalid-feedback">
+                    Please enter a valid mobile number.
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="msg">Message</label>
                   <textarea
                     name="msg"
                     id="msg"
-                    class="form-control"
                     placeholder="Message"
+                    class="form-control"
                     required
                   ></textarea>
+                  <div class="invalid-feedback">
+                    Please fill the message field.
+                  </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
                   Submit
@@ -290,6 +308,7 @@
           onclick="topFunction()"
           id="btn-back-to-top"
           class="btn btn-lg btn-outline-danger"
+          title="Back to top"
         >
           <i class="fas fa-chevron-up text-dark"></i>
         </button>

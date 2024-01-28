@@ -118,103 +118,215 @@
               <!-- Card -->
               <div class="card border border-dark pb-5">
                 <div class="card-body">
-                  <h5 class="mb-5">Billing details</h5>
-                  <!-- Grid row -->
-                  <div class="row">
-                    <!-- Grid column -->
-                    <div class="col-lg-6">
-                      <!-- First name -->
-                      <div class="form-group mb-0 mb-lg-4">
-                        <label for="firstName">First name</label>
+                  <h5 class="mb-5 text-center"><u>Billing details</u></h5>
+                  <form
+                    action="order_confirmation.html"
+                    method="get"
+                    id="form1"
+                    class="needs-validation"
+                    novalidate
+                  >
+                    <!-- Grid row start -->
+                    <div class="row">
+                      <!-- Grid column start -->
+                      <div class="col-lg-6">
+                        <!-- First name -->
+                        <div class="form-group">
+                          <label for="firstName">First name</label>
+                          <input
+                            type="text"
+                            id="firstName"
+                            class="form-control"
+                            pattern="[A-z\s]+"
+                            required
+                          />
+                          <div class="invalid-feedback">
+                            Please enter your first name.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Grid column end -->
+                      <!-- Grid column start -->
+                      <div class="col-lg-6">
+                        <!-- Last name -->
+                        <div class="form-group md-outline">
+                          <label for="lastName">Last name</label>
+                          <input
+                            type="text"
+                            id="lastName"
+                            class="form-control"
+                            pattern="[A-z\s]+"
+                            required
+                          />
+                          <div class="invalid-feedback">
+                            Please enter your last name.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Grid column end -->
+                    </div>
+                    <!-- Grid row end -->
+                    <!-- Phone -->
+                    <div class="form-group">
+                      <label for="phone">Phone Number</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        class="form-control"
+                        pattern="[0-9]{10}"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Please enter a valid phone number.
+                      </div>
+                    </div>
+                    <!-- Email address -->
+                    <div class="form-group">
+                      <label for="email">Email Address</label>
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        pattern="[A-z0-9.]+@[A-z]+\.[A-z]{2,}"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Please enter a valid email address.
+                      </div>
+                    </div>
+                    <!-- Country -->
+                    <div class="d-flex flex-wrap">
+                      <div class="w-100">
+                        <label for="country">Country</label>
+                        <select
+                          class="custom-select form-group"
+                          id="country"
+                          required
+                        >
+                          <option value="" selected>Choose your option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select your country.
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Address Part 1 -->
+                    <div class="form-group">
+                      <label for="address1">Address Line 1</label>
+                      <input
+                        type="text"
+                        id="address1"
+                        placeholder="House number and street name"
+                        class="form-control"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Please fill the address field.
+                      </div>
+                    </div>
+                    <!-- Address Part 2 -->
+                    <div class="form-group">
+                      <label for="address2">Address Line 2</label>
+                      <input
+                        type="text"
+                        id="address2"
+                        placeholder="Apartment, suite, unit etc. (optional)"
+                        class="form-control"
+                      />
+                    </div>
+                    <!-- Postcode / ZIP -->
+                    <div class="form-group">
+                      <label for="postCode">Postcode / ZIP</label>
+                      <input
+                        type="text"
+                        id="postCode"
+                        class="form-control"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Please enter a valid postcode.
+                      </div>
+                    </div>
+                    <!-- Town / City -->
+                    <div class="form-group">
+                      <label for="city">Town / City</label>
+                      <input
+                        type="text"
+                        id="city"
+                        class="form-control"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Please fill the city field.
+                      </div>
+                    </div>
+                    <!-- Coupon Code -->
+                    <div class="form-group">
+                      <label for="couponCode">Coupon Code</label>
+                      <div class="input-group mb-3">
                         <input
                           type="text"
-                          id="firstName"
-                          class="form-control mb-0 mb-lg-2"
+                          class="form-control"
+                          id="couponCode"
+                          placeholder="Enter coupon code here"
                         />
+                        <div class="input-group-append">
+                          <button class="btn btn-primary" type="button">
+                            Apply
+                          </button>
+                        </div>
                       </div>
                     </div>
-                    <!-- Grid column -->
-                    <!-- Grid column -->
-                    <div class="col-lg-6">
-                      <!-- Last name -->
-                      <div class="form-group md-outline">
-                        <label for="lastName">Last name</label>
-                        <input type="text" id="lastName" class="form-control" />
+                    <!-- Payment Method -->
+                    <div class="form-group">
+                      <label>Payment Method</label>
+                      <br />
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="paymentMethod"
+                          id="paymentMethod1"
+                          checked
+                        />
+                        <label class="form-check-label" for="paymentMethod1">
+                          UPI
+                        </label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="paymentMethod"
+                          id="paymentMethod2"
+                        />
+                        <label class="form-check-label" for="paymentMethod2">
+                          Cash on Delivery
+                        </label>
                       </div>
                     </div>
-                    <!-- Grid column -->
-                  </div>
-                  <!-- Grid row -->
-                  <!-- Phone -->
-                  <div class="form-group">
-                    <label for="form18">Phone</label>
-                    <input type="number" id="form18" class="form-control" />
-                  </div>
-                  <!-- Email address -->
-                  <div class="form-group">
-                    <label for="form19">Email address</label>
-                    <input type="email" id="form19" class="form-control" />
-                  </div>
-                  <!-- Country -->
-                  <div class="d-flex flex-wrap">
-                    <div class="w-100">
-                      <label>Country</label>
-                      <select class="custom-select form-group">
-                        <option value="" selected>Choose your option</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                      </select>
+                    <!-- Additional information -->
+                    <div class="form-group">
+                      <label for="additionalInfo">Additional information</label>
+                      <textarea
+                        id="additionalInfo"
+                        class="md-textarea form-control"
+                        rows="4"
+                        placeholder="Delivery instructions. (optional)"
+                      ></textarea>
                     </div>
-                  </div>
-                  <!-- Address Part 1 -->
-                  <div class="form-group">
-                    <label for="form14">Address Line 1</label>
-                    <input
-                      type="text"
-                      id="form14"
-                      placeholder="House number and
-    street name"
-                      class="form-control"
-                    />
-                  </div>
-                  <!-- Address Part 2 -->
-                  <div class="form-group">
-                    <label for="form15">Address Line 2</label>
-                    <input
-                      type="text"
-                      id="form15"
-                      placeholder="Apartment, suite, unit
-    etc. (optional)"
-                      class="form-control"
-                    />
-                  </div>
-                  <!-- Postcode / ZIP -->
-                  <div class="form-group">
-                    <label for="form16">Postcode / ZIP</label>
-                    <input type="text" id="form16" class="form-control" />
-                  </div>
-                  <!-- Town / City -->
-                  <div class="form-group">
-                    <label for="form17">Town / City</label>
-                    <input type="text" id="form17" class="form-control" />
-                  </div>
-                  <!-- Additional information -->
-                  <div class="form-group">
-                    <label for="form76">Additional information</label>
-                    <textarea
-                      id="form76"
-                      class="md-textarea form-control"
-                      rows="4"
-                    ></textarea>
-                  </div>
-                  <!-- <button class="btn btn-success"><i class="fa fa-check"></i>
-    Purchase</button> -->
-                  <div class="text-center">
-                    <a href="order_confirmation.html" class="btn btn-primary">
-                      <i class="fa fa-check mr-2"></i>Purchase
-                    </a>
-                  </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-check"></i> Purchase
+                      </button>
+                      <!-- <a href="order_confirmation.html" class="btn btn-primary">
+                        <i class="fa fa-check mr-2"></i>Purchase
+                      </a> -->
+                    </div>
+                  </form>
                 </div>
               </div>
               <!-- Card -->
