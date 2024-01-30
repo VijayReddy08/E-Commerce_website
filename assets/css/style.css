@@ -58,6 +58,11 @@
   }
 }
 
-input[type="radio"] {
+input[type="radio"],
+input[type="range"] {
   accent-color: #007bff;
+}
+
+h1 {
+  text-decoration: underline;
 }
